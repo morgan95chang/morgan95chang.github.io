@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MChang | Project Wormtail</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<link rel="shortcut icon" href="chang.ico" />
+	</head>
+	<body>
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">Solid State</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="about.html">About</a></li>
+								<li><a href="wormtail.html">Project Wormtail</a></li>
+								<!--<li><a href="elements.html">Elements</a></li>-->
+								<!--<li><a href="#">Log In</a></li>-->
+								<!--<li><a href="#">Sign Up</a></li>-->
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<div class="logo"><span class="icon fa-diamond"></span></div>
+							<h2> <a href="wormtail.html">Project Wormtail</a>: <br>	Stage 1 -- COMPLETE</h2>
+							<h3>
+							Building a simple model hand to build prototype around.
+								<p style="margin-left: 40px">
+								A <a href="https://www.amazon.com/4M-3774-Robotic-Hand-Kit/dp/B005MK0OPO">4M Robotic Hand Kit</a> was used as the base.<br>
+								<a href="https://www.amazon.com/TowerPro-SG90-Mini-Servo-Accessories/dp/B001CFUBN8">SG90 Micro Servo Motor 9G</a>s were used to power the fingers.<br>
+								<img src="/images/toyhandLandscape_121616.jpg" alt="hand prototype 1.0" style="width:489px;height:368px;">
+								</p>
+							Control of multiple LED lights using GPIO pins via keyboard input on Raspberry Pi
+								<p style="margin-left: 40px">The purpose of this rudimentary step is to learn to direct outputs to GPIO pins and build proper circuits.<br>
+								(<a href="https://github.com/morgan95chang/ProjectWormtail/blob/master/triggers.py">Code</a>)
+								</p>
+							Control of micro servo motor using GPIO pins on Raspberry Pi
+								<p style="margin-left: 40px">The purpose of this step is to learn how to control a micro servo motor using GPIO.PWM.<br>
+								The first challenge was figuring out how to provide a consistent 5V/1000mA power source. This was remedied by cutting the head off of a micro-USB cable and connecting each exposed lead to a lead with a GPIO-compatible pin. These cables can then be attached to 5V/1000mA power sources e.g. battery packs.<br>
+								When using GPIO.PWM with servo motors, pulse width indicates which angle the servo is to be set at. Servos have a range of 180 degrees, and the servo is updated every 20 milliseconds. A 1ms pulse sets it to 0 degrees, 1.5ms pulse to 90 degrees, and 2ms pulse to 180 degrees. <br>
+								It was found that a 90 degree rotation produced flexion in a finger.<br>
+								 <video width="320" height="640" controls>
+								 	<source src="/images/motorTest_121616.mp4" type="video/mp4">
+									motors.py demo video</video> <br>
+								(<a href="https://github.com/morgan95chang/ProjectWormtail/blob/master/motors.py">Code</a>)<br>
+								</p>
+							Control of multiple micro servo motors using GPIO pulse width modulator via keyboard input on Raspberry Pi
+								<p style="margin-left: 40px">
+								By combining the key input to GPIO pin output with GPIO.PWM controls and several battery packs, the five servo motors are able to be switched between flexed and relaxed positions individually and in groupings to produce hand gestures.<br>
+								<img src="/images/setup_121616.jpg" alt="fully connected prototype 1.0" style="width:489px;height:368px;"><br>
+								Mapping "H" to the thumb, "J" to the index finger, "K" to the middle finger, "L" to the fourth finger, and ";" to the pinky, and parsing out raw input using spaces as deliminators, single finger movements as well as hand gestures are possible.<br>
+								<video width="320" height="640" controls>
+								 	<source src="/images/test1DEMO_121616.mp4" type="video/mp4">
+									test1.py demo video</video> <br>
+								(<a href="https://github.com/morgan95chang/ProjectWormtail/blob/master/test1.py">Code</a>)
+								</p>
+							</h3>
+
+						</div>
+					</section>
+
+
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; <a href="https://www.linkedin.com/in/bluegummyotter">Morgan Chang</a></li> <li>Picture credit: <a href="http://www.thomasqian.com/">TQian</a></li><li>Solid State theme: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
